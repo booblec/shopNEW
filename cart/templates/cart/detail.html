@@ -9,56 +9,57 @@
 <div class="container">
 	<div class="check">	 
 		<div class="col-md-9 cart-items">
-			 <h1>My Shopping Bag (кол-во)</h1>
-				<script>$(document).ready(function(c) {
-					$('.close1').on('click', function(c){
-						$('.cart-header').fadeOut('slow', function(c){
-							$('.cart-header').remove();
-						});
-						});	  
-					});
-			   </script>
+			 <h1>Моя корзина (кол-во)</h1>
+
+					{% for item in cart %}
+        {% with product=item.product %}
 			 <div class="cart-header">
 				 <div class="close1"> </div>
+
 				 <div class="cart-sec simpleCart_shelfItem">
 						<div class="cart-item cyc">
-							 <img src="images/pic1.jpg" class="img-responsive" alt=""/>
+							 <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" class="img-responsive" alt=""/>
 						</div>
-					   {% for item in cart %}
-        {% with product=item.product %}
 					   <div class="cart-item-info">
-						<h3><a href="{{ product.get_absolute_url }}">Mountain Hopper(XS R034)</a><span>Model No: 3578</span></h3>
+						<h3><a href="{{ product.get_absolute_url }}">{{ product.name }}</a><span>Model No: 3578</span></h3>
 						<ul class="qty">
-							<li><p>Size : 5</p></li>
-							<li><p>Qty : 1</p></li>
+							<li><p><a href="{% url 'cart:cart_remove' product.id %}">Удалить</a></p></li>
+							<li><p>Кол-во : <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                    {{ item.update_quantity_form.quantity }}
+                    {{ item.update_quantity_form.update }}
+                    <input type="submit" value="Обновить">
+                    {% csrf_token %}
+                </form></p></li>
 						</ul>
 						<div class="delivery">
-							 <p>Service Charges : Rs.100.00</p>
-							 <span>Delivered in 2-3 bussiness days</span>
+							 <p>Цена: {{ item.price }}</p>
+							 <span>Обща цена : {{ item.total_price }}</span>
 							 <div class="clearfix"></div>
 				        </div>	
 					   </div>
 					   <div class="clearfix"></div>
 											
 				  </div>
+				         {% endwith %}
+        {% endfor %}
 			 </div>
 	
 		 </div>
 		 <div class="col-md-3 cart-total">
-			 <a class="continue" href="#">Continue to basket</a>
+			 <a class="continue" href="{% url 'shop:product_list' %}">Продолжить покупки</a>
 			 <div class="price-details">
 				 <h3>Price Details</h3>
 				 <span>Total</span>
-				 <span class="total1">6200.00</span>
-				 <span>Discount</span>
+				 <span class="total1">{{ cart.get_total_price }}</span>
+				 <span>Скидка</span>
 				 <span class="total1">---</span>
-				 <span>Delivery Charges</span>
+				 <span>Стоимость доставки</span>
 				 <span class="total1">150.00</span>
 				 <div class="clearfix"></div>				 
 			 </div>	
 			 <ul class="total_price">
 			   <li class="last_price"> <h4>TOTAL</h4></li>	
-			   <li class="last_price"><span>6350.00</span></li>
+			   <li class="last_price"><span>{{ cart.get_total_price }}</span></li>
 			   <div class="clearfix"> </div>
 			 </ul>
 			
