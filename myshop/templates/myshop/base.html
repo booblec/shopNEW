@@ -55,7 +55,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		{% else %}
 		<div class="cssmenu">
 			<ul>
-				<li><a href="{% url 'login' %}">Log in</a></li>
+				<li><a href="{% url 'shop:login' %}">Log in</a></li>
 			</ul>
 		</div>
 
@@ -70,7 +70,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="col-xs-6 menu">
 		            <ul class="megamenu skyblue">
-				      <li class="grid"><a class="color1" href="index.html">Категории</a><div class="megapanel">
+				      <li class="grid"><a class="color1" href="{% url 'shop:product_list'%}">Категории</a><div class="megapanel">
 						<div class="row">
 							<div class="col1">
 								<div class="h_nav">

@@ -1,30 +1,13 @@
-{% extends "myshop/base.html" %}
-{% load static %}
-{% block title %}
-{% if category %}{{ category.name }}{% else %}Товары{% endif %}
-{% endblock %}
+{% extends "app/layout.html" %}
+
 {% block content %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <div class="container">
 <div class="women_main">
 	<div class="col-md-9 w_content">
 	    <div class="women">
-			<a href="#"><h4>{% if category %}{{ category.name }}{% else %}Товар{% endif %}</h4></a>
+			<a href="#"><h4>Enthecwear - <span>4449 itemms</span> </h4></a>
 			<ul class="w_nav">
 						<li>Sort : </li>
 		     			<li><a class="active" href="#">popular</a></li> |
@@ -36,24 +19,20 @@
 		     <div class="clearfix"></div>	
 		</div>
 		<!-- grids_of_4 -->
-					{% for product in products %}
 		<div class="grids_of_4">
-
 		  <div class="grid1_of_4 simpleCart_shelfItem">
 				<div class="content_box"><a href="single.html">
 			   	  <div class="view view-fifth">
-						 <a href="{{ product.get_absolute_url }}">
-			   	   	 <img src="{% if product.image %}{{ product.image.url }}{%else %}{% static 'img/no_image.png' %}{% endif %}" class="img-responsive" alt=""/>
-							 </a>
+			   	   	 <img src="images/1.jpg" class="img-responsive" alt=""/>
 				   	   	<div class="mask1">
 	                        <div class="info"> </div>
 			            </div>
 				   	  </a>
 				   </div>
-				    <h5><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></h5>
+				    <h5><a href="single.html"> Duis autem</a></h5>
 				    <h6>It is a long establishe</h6>
 				     <div class="size_1">
-				     	<span class="item_price">Р. {{ product.price }}</span>
+				     	<span class="item_price">$187.95</span>
 				       <select class="item_Size">
 						<option value="Small">L</option>
 						<option value="Medium">S</option>
@@ -69,15 +48,11 @@
 			    	    <div class="size_2-right"><input type="button" class="item_add add3" value="" /></div>
 			    	    <div class="clearfix"> </div>
 			    	 </div>
-
 			     </div>
+			</div>
 
 
-			
-		</div>
-								  {% endfor %}
-		</div>
-
+			<div class="clearfix"></div>
 		</div>
 		
 			<div class="clearfix"></div>
@@ -90,15 +65,13 @@
 		<div class="w_nav1">
 			<h4>All</h4>
 			<ul>
-<li {% if not category %}class="selected"{% endif %}>
-<a href="{% url 'shop:product_list' %}">Все</a>
-</li>
-{% for c in categories %}
-<li {% if category.slug == c.slug %}class="selected" {% endif %}>
-<a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
-</li>
-{% endfor %}
-</ul>
+				<li><a href="women.html">women</a></li>
+				<li><a href="#">new arrivals</a></li>
+				<li><a href="#">trends</a></li>
+				<li><a href="#">boys</a></li>
+				<li><a href="#">girls</a></li>
+				<li><a href="#">sale</a></li>
+			</ul>	
 		</div>
 		<h3>filter by</h3>
 		<section  class="sky-form">
@@ -126,32 +99,5 @@
    <!-- end content -->
  </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 {% endblock %}

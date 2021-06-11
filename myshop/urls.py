@@ -9,8 +9,14 @@ app_name = 'myshop'
 
 urlpatterns = [
     path('contact/', views.contact, name='contact'),
-    path('', views.index, name='index'),
-    path('product_list', views.product_list, name='product_list'),
+    path('login/', LoginView.as_view (
+             template_name='myshop/login.html',
+             authentication_form=forms.BootstrapAuthenticationForm,
+             extra_context= { 'title': 'Log in' }
+         ),  name='login'),
+    path('logout/', LogoutView.as_view(next_page='/'), name='logout'),
+    path('index/', views.index, name='index'),
+    path('', views.product_list, name='product_list'),
     path('<slug:category_slug>/', views.product_list,
          name='product_list_by_category'
          ),

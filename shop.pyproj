@@ -111,7 +111,7 @@
     <Content Include="myshop\templates\myshop\index.html" />
     <Content Include="myshop\templates\myshop\login.html" />
     <Content Include="myshop\templates\myshop\loginpartial.html" />
-    <Content Include="myshop\templates\myshop\men.html" />
+    <Content Include="myshop\templates\myshop\shop.html" />
     <Content Include="myshop\templates\myshop\product\detail.html" />
     <Content Include="myshop\templates\myshop\product\list.html" />
     <Content Include="myshop\templates\myshop\single.html" />

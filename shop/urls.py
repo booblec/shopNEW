@@ -26,13 +26,6 @@ urlpatterns = [
     path('cart/', include('cart.urls', namespace='cart')),
     path('', include('myshop.urls', namespace='shop')),
 
-
-    path('login/', LoginView.as_view (
-             template_name='myshop/login.html',
-             authentication_form=forms.BootstrapAuthenticationForm,
-             extra_context= { 'title': 'Log in' }
-         ),  name='login'),
-    path('logout/', LogoutView.as_view(next_page='/'), name='logout'),
     
 ]
 
