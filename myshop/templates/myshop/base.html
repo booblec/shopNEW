@@ -62,16 +62,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		{% endif %}
 	</div>
 </div>	
-<div class="wrap-box"></div>
-<div class="header_bottom">
+<div class="header_bottom men_border">
 	    <div class="container">
 			<div class="col-xs-8 header-bottom-left">
 				<div class="col-xs-2 logo">
-					<h1><a href="#"><span>Buy</span>shop</a></h1>
+					<h1><a href="{% url 'shop:index'%}"><span>Buy</span>shop</a></h1>
 				</div>
 				<div class="col-xs-6 menu">
 		            <ul class="megamenu skyblue">
-				      <li class="grid"><a class="color1" href="index.html">Men</a><div class="megapanel">
+				      <li class="grid"><a class="color1" href="index.html">Категории</a><div class="megapanel">
 						<div class="row">
 							<div class="col1">
 								<div class="h_nav">
@@ -91,8 +90,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</li>
 				<li><a class="color4" href="#">About</a></li>				
-				<li><a class="color5" href="#">Shop</a></li>
-				<li><a class="color6" href="#">Contact</a></li>
+				<li><a class="color5" href="{% url 'shop:product_list'%}">Shop</a></li>
+				<li><a class="color6" href="{% url 'shop:contact' %}">Contact</a></li>
 			  </ul> 
 			</div>
 		</div>

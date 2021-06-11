@@ -19,18 +19,21 @@ from django.conf.urls.static import static
 from django.contrib.auth.views import LoginView, LogoutView
 from myshop import forms
 from django.contrib import admin
+from myshop.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('cart/', include('cart.urls', namespace='cart')),
     path('', include('myshop.urls', namespace='shop')),
+
+
     path('login/', LoginView.as_view (
              template_name='myshop/login.html',
              authentication_form=forms.BootstrapAuthenticationForm,
              extra_context= { 'title': 'Log in' }
          ),  name='login'),
     path('logout/', LogoutView.as_view(next_page='/'), name='logout'),
-
+    
 ]
 
 if settings.DEBUG:

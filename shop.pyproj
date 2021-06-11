@@ -109,7 +109,6 @@
     <Content Include="myshop\templates\myshop\checkout.html" />
     <Content Include="myshop\templates\myshop\contact.html" />
     <Content Include="myshop\templates\myshop\index.html" />
-    <Content Include="myshop\templates\myshop\layout.html" />
     <Content Include="myshop\templates\myshop\login.html" />
     <Content Include="myshop\templates\myshop\loginpartial.html" />
     <Content Include="myshop\templates\myshop\men.html" />
