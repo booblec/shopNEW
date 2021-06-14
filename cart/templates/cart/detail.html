@@ -11,7 +11,7 @@
 
 <!---->
 <div class="back">
-	<h2>Checkout</h2>
+	<h2>Корзина</h2>
 </div>
 		<!---->
 		<div class="product">
@@ -94,9 +94,12 @@
 				<div class="check-out">	 
 			
 		 <div class=" cart-items">
-			 <h3>My Shopping Bag (2)</h3>
-		
-				
+			 <h3>Моя корзина 	{% with total_items=cart|length %}
+    {% if cart|length > 0 %}({{ total_items }})</h3>
+			 {% else %} 
+		<h3>Моя корзина</h3>
+			 {% endif %} 
+			{% endwith %} 	
 				  <div class="in-check" >
 		  <ul class="unit">
 			<li><span>Фото</span></li>
