@@ -9,77 +9,162 @@
 
 
 
+<!---->
+<div class="back">
+	<h2>Checkout</h2>
+</div>
+		<!---->
+		<div class="product">
+			<div class="container">
+				<div class="col-md-3 product-price">
+					  
+				
+				<!---->
+				<div class="product-bottom">
+					<div class="of-left-in">
+								<h3 class="best">Детали заказа</h3>
+							</div>
+					{% with total_items=cart|length %}
+    {% if cart|length > 0 %}
+					<div class="product-go">
+					
+							<div class=" fashion-grid1">
+								<h6 class="best2">Общая цена заказа </h6>
+								
+								<span class=" price-in1">₽ {{ cart.get_total_price }}</span>
+							</div>
+								
+							<div class="clearfix"> </div>
+							</div>
+							<div class="product-go">
+						<div class=" fashion-grid">
+									<a href="single.html"><img class="img-responsive " src="images/f2.jpg" alt=""></a>
+									
+								</div>
+							<div class="fashion-grid1">
+								<h6 class="best2"> Кол-во товаров:</h6>
+											       
+								<span class=" price-in1"> {{ total_items }}</span>
 
 
-<div class="container">
-	<div class="check">	 
-		<div class="col-md-9 cart-items">
-			 <h1>Моя корзина (кол-во)</h1>
+							</div>
+								
+							<div class="clearfix"> </div>
+							</div>
+					<div class="product-go">
+						<div class=" fashion-grid">
+									<img class="img-responsive " src="images/f2.jpg" alt="">
+									
+								</div>
+							<div class="fashion-grid1">
+								<a href="single.html"><h6 class="best2"> Оформить заказ</h6></a>
+											       
+						
 
 
-			 <div class="cart-header">
-				 <div class="close1"> </div>
-				 					{% for item in cart %}
-        {% with product=item.product %}
-				 <div class="cart-sec simpleCart_shelfItem">
-						<div class="cart-item cyc">
-							 <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" class="img-responsive" alt=""/>
-						</div>
-					   <div class="cart-item-info">
-						<h3><a href="{{ product.get_absolute_url }}">{{ product.name }}</a><span>Model No: 3578</span></h3>
-						<ul class="qty">
-							<li><p><a href="{% url 'cart:cart_remove' product.id %}">Удалить</a></p></li>
-							<li>Кол-во : <form action="{% url 'cart:cart_add' product.id %}" method="post">
+							</div>
+								
+							<div class="clearfix"> </div>
+							</div>
+														    {% else %}
+				<div class="product-go">
+						<div class=" fashion-grid">
+									<a href="single.html"><img class="img-responsive " src="images/f2.jpg" alt=""></a>
+									
+								</div>
+							<div class="fashion-grid1">
+								<h6 class="best2">  Корзина пустая.</h6>
+											       
+							
+
+
+							</div>
+								
+							<div class="clearfix"> </div>
+							</div>
+			   				    
+								       {% endif %}
+    {% endwith %}    
+						
+				</div>
+				</div>
+				
+				<!---->
+				<div class="col-md-9 product-price1">
+				<div class="check-out">	 
+			
+		 <div class=" cart-items">
+			 <h3>My Shopping Bag (2)</h3>
+		
+				
+				  <div class="in-check" >
+		  <ul class="unit">
+			<li><span>Фото</span></li>
+			<li><span>Название</span></li>	
+			  <li><span>Кол-во</span></li>
+			<li><span>Общая цена</span></li>		
+			<li> </li>
+			<div class="clearfix"> </div>
+		  </ul>
+
+
+
+
+
+
+
+
+					  {% for item in cart %}
+					          {% with product=item.product %}
+		  <ul class="cart-header">
+		   <div class="close1"> </div>
+			<li class="ring-in"><a href="{{ product.get_absolute_url }}" ><img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" class="img-responsive" alt=""></a>
+			</li>
+			<li><span>{{ product.name }}</span></li>
+			
+			</li><li>Кол-во : <form action="{% url 'cart:cart_add' product.id %}" method="post">
                     {{ item.update_quantity_form.quantity }}
                     {{ item.update_quantity_form.update }}
                     <input type="submit" value="Обновить">
                     {% csrf_token %}
                 </form></li>
-						</ul>
-						<div class="delivery">
-							 <p>Цена: {{ item.price }}</p>
-							 <span>Обща цена : {{ item.total_price }}</span>
-							 <div class="clearfix"></div>
-				        </div>	
-					   </div>
-					   <div class="clearfix"></div>
-											
-				  </div>
-				         {% endwith %}
+			  <li><span>₽ {{ item.total_price }}</span></li>
+			<li> <a href="{% url 'cart:cart_remove' product.id %}" class="add-cart cart-check">Удалить</a></li>
+			<div class="clearfix"> </div>
+			</ul>
+					  				         {% endwith %}
         {% endfor %}
+
+ 		</div>
+
 			 </div>
-	
+					  
 		 </div>
-		 <div class="col-md-3 cart-total">
-			 <a class="continue" href="{% url 'shop:product_list' %}">Продолжить покупки</a>
-			 <div class="price-details">
-				 <h3>Price Details</h3>
-				 <span>Total</span>
-				 <span class="total1">{{ cart.get_total_price }}</span>
-				 <span>Скидка</span>
-				 <span class="total1">---</span>
-				 <span>Стоимость доставки</span>
-				 <span class="total1">150.00</span>
-				 <div class="clearfix"></div>				 
-			 </div>	
-			 <ul class="total_price">
-			   <li class="last_price"> <h4>TOTAL</h4></li>	
-			   <li class="last_price"><span>{{ cart.get_total_price }}</span></li>
-			   <div class="clearfix"> </div>
-			 </ul>
-			
-			 
-			 <div class="clearfix"></div>
-			 <a class="order" href="#">Place Order</a>
-			 <div class="total-item">
-				 <h3>OPTIONS</h3>
-				 <h4>COUPONS</h4>
-				 <a class="cpns" href="#">Apply Coupons</a>
-				 <p><a href="#">Log In</a> to use accounts - linked coupons</p>
-			 </div>
+		
+				</div>
+				<div class="clearfix"> </div>
 			</div>
-	 </div>
+		</div>
+			<!---->
+<div class="clearfix"> </div>
 </div>
+</div>
+<!---->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -8,6 +8,7 @@ from .views import contact
 app_name = 'myshop'
 
 urlpatterns = [
+    path('about/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),
     path('login/', LoginView.as_view (
              template_name='myshop/login.html',

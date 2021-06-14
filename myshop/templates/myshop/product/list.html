@@ -3,129 +3,141 @@
 {% block title %}
 {% if category %}{{ category.name }}{% else %}Товары{% endif %}
 {% endblock %}
+	{% block css%} 
+{% endblock %}
 {% block content %}
 
 
 
+		<!---->
+		<div class="product">
+			<div class="container">
+				<div class="col-md-3 product-price">
+					  <div class="price-grid">
+					    <div class="of-left">
+						<h3 class="cate cate-on">PRICE</h3>
+					</div>
+	  <ul class="dropdown-menu1">
+            <li><a href="#">
+                <p>
+                      <label for="amount" class="amount">Range:</label>
+                     <input type="text" id="amount" style="border: 0; color: #ff5d56; font-weight: bold;" />
+                         
+						  </p>
+                
+                   <div id="slider-range"></div>
+                </a></li>
+				
+          </ul>
+		  <a  class="go" href="single.html">GO</a>
+		  	<div class="clearfix"> </div>
+<!---->
+ <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+
+      <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+
+<script type='text/javascript'>//<![CDATA[ 
+$(window).load(function(){
+ $( "#slider-range" ).slider({
+            range: true,
+            min: 0,
+            max: 500,
+            values: [ 100, 400 ],
+            slide: function( event, ui ) {  $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+            }
+ });
+$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+
+});//]]>  
+
+</script>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<div class="container">
-<div class="women_main">
-	<div class="col-md-9 w_content">
-	    <div class="women">
-			<a href="#"><h4>{% if category %}{{ category.name }}{% else %}Товар{% endif %}</h4></a>
-			<ul class="w_nav">
-						<li>Sort : </li>
-		     			<li><a class="active" href="#">popular</a></li> |
-		     			<li><a href="#">new </a></li> |
-		     			<li><a href="#">discount</a></li> |
-		     			<li><a href="#">price: Low High </a></li> 
-		     			<div class="clear"></div>	
-		     </ul>
-		     <div class="clearfix"></div>	
+<!---->
 		</div>
-		<!-- grids_of_4 -->
-					{% for product in products %}
-		<div class="grids_of_4">
-
-		  <div class="grid1_of_4 simpleCart_shelfItem">
-				<div class="content_box"><a href="single.html">
-			   	  <div class="view view-fifth">
-						 <a href="{{ product.get_absolute_url }}">
-			   	   	 <img src="{% if product.image %}{{ product.image.url }}{%else %}{% static 'img/no_image.png' %}{% endif %}" class="img-responsive" alt=""/>
-							 </a>
-				   	   	<div class="mask1">
-	                        <div class="info"> </div>
-			            </div>
-				   	  </a>
-				   </div>
-				    <h5><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></h5>
-				    <h6>It is a long establishe</h6>
-				     <div class="size_1">
-				     	<span class="item_price">Р. {{ product.price }}</span>
-				       <select class="item_Size">
-						<option value="Small">L</option>
-						<option value="Medium">S</option>
-						<option value="Large">M</option>	
-						<option value="Large">XL</option>	
-		      		    </select>
-		      		    <div class="clearfix"></div>
-		      		  </div>
-		      		  <div class="size_2">
-		      		    <div class="size_2-left"> 
-					       <input type="text" class="item_quantity quantity_1" value="1" />
-					    </div>
-			    	    <div class="size_2-right"><input type="button" class="item_add add3" value="" /></div>
-			    	    <div class="clearfix"> </div>
-			    	 </div>
-
-			     </div>
-
-
+				<div class=" rsidebar span_1_of_left">
+					<div class="of-left">
+						<h3 class="cate">CATEGORIES</h3>
+					</div>
+		 <ul class="menu">
+		<li class="item1"><a href="#">Men </a>
+			<ul class="cute">
+				<li class="subitem1"><a href="single.html">Cute Kittens </a></li>
+				<li class="subitem2"><a href="single.html">Strange Stuff </a></li>
+				<li class="subitem3"><a href="single.html">Automatic Fails </a></li>
+			</ul>
+		</li>
+				
+		<li class="item4"><a href="#">Shoes</a>
+			<ul class="cute">
+				<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
+				<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
+				<li class="subitem3"><a href="product.html">Automatic Fails </a></li>
+			</ul>
+		</li>
+	</ul>
+					</div>
+				<!--initiate accordion-->
+		<script type="text/javascript">
+			$(function() {
+			    var menu_ul = $('.menu > li > ul'),
+			           menu_a  = $('.menu > li > a');
+			    menu_ul.hide();
+			    menu_a.click(function(e) {
+			        e.preventDefault();
+			        if(!$(this).hasClass('active')) {
+			            menu_a.removeClass('active');
+			            menu_ul.filter(':visible').slideUp('normal');
+			            $(this).addClass('active').next().stop(true,true).slideDown('normal');
+			        } else {
+			            $(this).removeClass('active');
+			            $(this).next().stop(true,true).slideUp('normal');
+			        }
+			    });
 			
-		</div>
-								  {% endfor %}
-		</div>
-
-		</div>
+			});
+		</script>
+<!---->
+	<div class="product-middle">
 		
-			<div class="clearfix"></div>
-		</div>
-		<!-- end grids_of_4 -->
+					<div class="fit-top">
+						<h6 class="shop-top">LOREM IPSUM</h6>
+						<a href="single.html" class="shop-now">SHOP NOW</a>
+<div class="clearfix"> </div>
 	</div>
-	<!-- start sidebar -->
-	<div class="col-md-3">
-	  <div class="w_sidebar">
-		<div class="w_nav1">
-			<h4>All</h4>
-			<ul>
-<li {% if not category %}class="selected"{% endif %}>
-<a href="{% url 'shop:product_list' %}">Все</a>
-</li>
-{% for c in categories %}
-<li {% if category.slug == c.slug %}class="selected" {% endif %}>
-<a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
-</li>
-{% endfor %}
-</ul>
-		</div>
-		<h3>filter by</h3>
-		<section  class="sky-form">
-					<h4>catogories</h4>
-						<div class="row1 scroll-pane">
-							<div class="col col-4">
-								<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>kurtas</label>
+				</div>	 
+						<div class="sellers">
+							<div class="of-left-in">
+								<h3 class="tag">TAGS</h3>
 							</div>
-							<div class="col col-4">
-								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>kutis</label>
-								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>churidar kurta</label>
-								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>salwar</label>
-								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>printed sari</label>
-								<label class="checkbox"><input type="checkbox" name="checkbox" ><i></i>shree</label>
-								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Anouk</label>
+								<div class="tags">
+									<ul>
+										<li><a href="#">design</a></li>
+										<li><a href="#">fashion</a></li>
+										<li><a href="#">dress</a></li>
+										
+										<div class="clearfix"> </div>
+									</ul>
 								
-							</div>
-						</div>
-		</section>
+								</div>
+								
+		</div>
+				<!---->
+				</div>
+				
 		
-	  </div>
-   </div>
-	<!-- start content -->
-   <div class="clearfix"></div>
-   <!-- end content -->
- </div>
-</div>
+			<!---->
+			
+				<!---->
+				<div class="col-md-9 product-price1">
+					<div class="mens-toolbar">
+						<p class="showing">Showing 1–9 of 21 results</p>
+	                
+    	      
+                	<div class="clearfix"></div>		
+		        </div>
+		        <div class="product-right-top">
+		        	<div class="top-product">
 
 
 
@@ -142,16 +154,114 @@
 
 
 
+		        			{% for product in products %}
+	   		     	<div class="col-md-4 chain-grid simpleCart_shelfItem">
+					<div class="grid-span-1">
+	   		     		<a href="{{ product.get_absolute_url }}"><img class="img-responsive " src="{% if product.image %}{{ product.image.url }}{%else %}{% static 'img/no_image.png' %}{% endif %}" alt=" ">
+						<div class="link">
+	   		     			<ul >
+										<li><i class="glyphicon glyphicon-search"> </i></li>
+										
+							</ul>
+	   		     		</div></a>
+	   		     		</div>
+	   		     		<div class="grid-chain-bottom ">
+	   		     			<a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
+	   		     			<div class="star-price">
+	   		     				<div class="price-at">
+		   		     				<ul class="star-footer">
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+									</ul>
+									</div>
+									<div class="price-at-bottom ">
+										<span class="item_price">₽ {{ product.price }}</span>
+									</div>
+	   		     				<div class="clearfix"> </div>
+							</div>
+							<div class="cart-add">
+								<a class="add1 item_add" href="#">ADD TO CART <i> </i></a>
+							<a class="add2" href="#"><i class="glyphicon glyphicon-heart-empty"> </i></a>
+								<div class="clearfix"> </div>
+							</div>
+	   		     		</div>
+	   		     	</div>
+	   		     {% endfor %}
+	   		     	<div class="clearfix"> </div>
+		        	</div>
 
-
-
-
-
-
-
-
-
-
-
+		        </div>
+		        <ul class="start">
+					<li><a href="#"><i> </i></a></li>
+					<li><span>1</span></li>
+					<li class="arrow"><a href="#">2</a></li>
+					<li class="arrow"><a href="#">3</a></li>
+					
+					
+					<li><a href="#"><i class="next"> </i></a></li>
+				</ul>
+				<div class="clearfix"> </div>
+				</div>
+				
+			<div class="clearfix"> </div>
+			
+				<div class="shipping">
+					<div class="col-md-3 col-md1">
+						<div class=" phone">
+						
+							<div class="num">
+								<span>+7(906)224-8012</span>
+								<p>Понедельник - Суббота: 8:00 - 17:00</p>
+							</div>
+							<i class="phone-in"> </i>
+							<div class="clearfix"> </div>
+						</div>
+					
+					</div>
+					<div class="col-md-5 col-md2">
+						<div class=" phone1">
+					
+							<i class="phone-in1"> </i>
+							<div class="num1">
+								<span>Бесплатная доставка</span>
+								<p>Для заказов от 1000 ₽</p>
+							</div>
+							<a class="learn-in" href="single.html">Узнать больше</a>
+							<div class="clearfix"> </div>
+						</div>
+			
+					</div>
+					<div class="col-md-4 col-md3">
+						<div class=" phone2">
+					
+							
+							<div class="num2">
+								<span>Сумашедшие скидки</span>
+								<p>По промокоду на специальной странице</p>
+							</div>
+							<a class="learn-in1" href="single.html">Узнать больше</a>
+							<div class="clearfix"> </div>
+						</div>
+			</div>
+			<div class="clearfix"> </div>
+			</div>
+					
+				</div>
+				
+			<!---->
+		
+		</div>
+		<div class="bottom-grid1">
+					
+					<div class="fit1">
+						<h3>HAPPY SHOPPING</h3>
+						<p>Lorem Ipsum sit amet consectuer adipiscing elit
+sed diam nonummy nibh euismod</p>
+					</div>
+				</div>
+		
 
 {% endblock %}

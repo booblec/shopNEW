@@ -1,184 +1,218 @@
 {% load static %}
-<!DOCTYPE HTML>
-<html>
-
 {% load staticfiles %}
+<!DOCTYPE html>
+<html>
 <head>
-<title>{% block title %}{% endblock %}</title>
+<title>I-wear A Ecommerce Category Flat Bootstarp Resposive Website Template | Product :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Buy_shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+<meta name="keywords" content="I-wear Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<!-- Custom Theme files -->
-    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
-    <script type="text/javascript" src="{% static 'scripts/simpleCart.min.js' %}"></script>
-<!-- Custom Theme files -->
-<!--webfont-->
-<link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
-    <script type="text/javascript" src="{% static 'scripts/jquery-1.11.1.min.js' %}"></script>
-<!-- start menu -->
-<link href="css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
-	<script type="text/javascript" src="{% static 'scripts/megamenu.js' %}"></script>
-	<script type="text/javascript" src="{% static 'scripts/jquery.etalage.min.js' %}"></script>
+
+<!--fonts-->
+<link href='//fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Montez' rel='stylesheet' type='text/css'>
+<!--//fonts-->	
+
+
+	{% block css%}{% endblock %}
+	<script type="text/javascript" src="{% static 'scripts/easing.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/easyResponsiveTabs.js' %}"></script>
 	<script type="text/javascript" src="{% static 'scripts/jquery.easydropdown.js' %}"></script>
-	<script type="text/javascript" src="{% static 'scripts/jquery.jscrollpane.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/jquery.flexslider.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/jquery.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/memenu.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/bootstrap.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/jquery-ui.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/main.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/modernizr.custom.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/move-top.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/simpleCart.min.js' %}"></script>
 	<script src="{% static 'scripts/jquery.validate.min.js' %}"></script>
-	<link href="{% static 'css/megamenu.css' %}" rel="stylesheet" type="text/css" media="all" />
-	<link href="{% static 'css/etalage.css' %}" rel="stylesheet" type="text/css" media="all" />
-<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
-<link href="{% static "css/base.css" %}" rel="stylesheet">
+	<link href="{% static 'css/flexslider.css' %}" rel="stylesheet" type="text/css" media="all" />
+	<!-- CSS only -->
+	<link href="{% static 'css/jquery-ui.css' %}" rel="stylesheet" type="text/css" media="all" />
+	<link href="{% static 'css/memenu.css' %}" rel="stylesheet" type="text/css" media="all" />
+
+		<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+	<link href="{% static 'css/flexslider.css' %}" rel="stylesheet" type="text/css" media="all" />
+	<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{% static "css/base.css" %}" rel="stylesheet">
+	<script>$(document).ready(function(){$(".memenu").memenu();});</script>	
 </head>
 <body>
-<div class="header_top">
-	<div class="container">
-		<div class="one-fifth column row_1">
-			<span class="selection-box">
-				<select class="domains valid" name="domains">
-					<option>English</option>
-					<option>French</option>
-					<option>German</option>
-				</select>
-			</span>
-		</div>
 
-		{% if user.is_authenticated %}
-		<div class="cssmenu">
-			<ul>
-				<li>Hello {{ user.username }}!</li>
-				<li class="active"><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-			</ul>
-		</div>
-
-		{% else %}
-		<div class="cssmenu">
-			<ul>
-				<li><a href="{% url 'shop:login' %}">Log in</a></li>
-			</ul>
-		</div>
-
-		{% endif %}
-	</div>
-</div>	
-<div class="header_bottom men_border">
-	    <div class="container">
-			<div class="col-xs-8 header-bottom-left">
-				<div class="col-xs-2 logo">
-					<h1><a href="{% url 'shop:index'%}"><span>Buy</span>shop</a></h1>
+			<div class="header-info">
+			<div class="container">
+					<div class="header-top-in">
+						
+						<ul class="support">
+							<li><a href="valera.44.99@yandex.ru"><i class="glyphicon glyphicon-envelope"> </i>valera.44.99@yandex.ru</a></li>
+							<li><span><i class="glyphicon glyphicon-earphone" class="tele-in"> </i>+7-906-224-80-12</span></li>			
+						</ul>
+													{% if user.is_authenticated %}
+						<ul class=" support-right">
+							<li><i class="glyphicon glyphicon-user" class="men"> </i>Привет, {{ user.username }}!</li>
+							<li class="active"><a href="javascript:document.getElementById('logoutForm').submit()">Выйти</a></li>			
+						</ul>
+							{% else %}
+						<ul class=" support-right">
+							<li><a href="account.html"><i class="glyphicon glyphicon-user" class="men"> </i>Привет гость!</a></li>
+							<li><a href="{% url 'shop:login' %}"><i class="glyphicon glyphicon-lock" class="tele"> </i>Войти</a></li>			
+						</ul>
+						{% endif %}
+						<div class="clearfix"> </div>
+					</div>
 				</div>
-				<div class="col-xs-6 menu">
-		            <ul class="megamenu skyblue">
-				      <li class="grid"><a class="color1" href="{% url 'shop:product_list'%}">Категории</a><div class="megapanel">
-						<div class="row">
-							<div class="col1">
-								<div class="h_nav">
+			</div>	
+<div class="header header5">
+	<div class="header-top">
+
+			<div class="header-bottom">
+			<div class="container">			
+				<div class="logo">
+					<h2><a href="{% url 'shop:index'%}">Сун<span>дучок</span></a></h2>
+				</div>
+				
+				
+				
+		 
+			<div class="top-nav">
+				<ul class="memenu skyblue"><li><a href="{% url 'shop:index'%}">Домой</a></li>
+					<li  class="grid"><a href="{% url 'shop:product_list' %}">Магазин</a>
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+									<h4>Женщины</h4>
 									<ul>
-                                     <li {% if not category %}{% endif %}>
-                                     <a href="{% url 'shop:product_list' %}">Все</a>
-                                     </li>
-                                     {% for c in categories %}
-                                     <li {% if category.slug == c.slug %} {% endif %}>
-                                     <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+										{% for categories in category_woman %}
+										<li>
+                                     <a href="{{ categories.get_absolute_url }}">{{ categories.name }}</a>
                                      </li>
                                      {% endfor %}
-									</ul>	
-								</div>							
-							</div>						
-						  </div>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>Мужчины</h4>
+									<ul>
+									{% for categories in category_man %}
+										<li>
+                                     <a href="{{ categories.get_absolute_url }}">{{ categories.name }}</a>
+                                     </li>
+                                     {% endfor %}					
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>Другое</h4>
+									<ul>
+									{% for categories in category_dr %}
+										<li>
+                                     <a href="{{ categories.get_absolute_url }}">{{ categories.name }}</a>
+                                     </li>
+                                     {% endfor %}
+									</ul>
+								</div>
+								
+							
+							</div>
 						</div>
 					</li>
-				<li><a class="color4" href="#">About</a></li>				
-				<li><a class="color5" href="{% url 'shop:product_list'%}">Shop</a></li>
-				<li><a class="color6" href="{% url 'shop:contact' %}">Contact</a></li>
-			  </ul> 
+				<li class="grid"><a href="{% url 'shop:about' %}">О нас</a>
+						
+					</li>
+					<li class="grid"><a href="{% url 'shop:contact'%}">Контакты</a>
+						
+					</li>
+				</ul>
+				<div class="clearfix"> </div>
 			</div>
-		</div>
-	    <div class="col-xs-4 header-bottom-right">
-	       <div class="box_1-cart">
-			       {% with total_items=cart|length %}
+					<!---->
+									{% with total_items=cart|length %}
     {% if cart|length > 0 %}
-		     <div class="box_11"><a href="{% url 'cart:cart_detail' %}">
-
-
-
-		      <h4><p>Cart: {{ cart.get_total_price }} ({{ total_items }} items)</p><img src="images/bag.png" alt=""/><div class="clearfix"> </div></h4>
-		      </a></div>
-			   				    {% else %}
-			   				     Корзина пустая.
-			       {% endif %}
+					<div class="cart box_1">
+						<a href="{% url 'cart:cart_detail' %}">
+						<h3> <div class="total">
+							<span>₽ {{ cart.get_total_price }}   ({{ total_items }}) </span>
+							</div>
+							<img src="{% static 'images/cart2-2.png'%}" alt=""/></h3>
+						</a>
+						
+						<div class="clearfix"> </div>
+					</div>
+				{% else %}
+									<div class="cart box_1">
+						<a href="{% url 'cart:cart_detail' %}">
+						<h3> <div class="total">
+							<span> Корзина пуста </span>
+							</div>
+							<img src="images/cart2-2.png" alt=""/></h3>
+						</a>
+						
+						<div class="clearfix"> </div>
+					</div>
+					       {% endif %}
     {% endwith %}    
-	          <div class="clearfix"> </div>
-	        </div>
-       </div>
-        <div class="clearfix"></div>
-	 </div>
-</div> 
-
-
-
-{% block content %}{% endblock %}
-
-<div class="footer">
-	<div class="container">
-	   <div class="footer_top">
-		<div class="col-md-4 box_3">
-			<h3>Our Stores</h3>
-			<address class="address">
-              <p>9870 St Vincent Place, <br>Glasgow, DC 45 Fr 45.</p>
-              <dl>
-                 <dt></dt>
-                 <dd>Freephone:<span> +1 800 254 2478</span></dd>
-                 <dd>Telephone:<span> +1 800 547 5478</span></dd>
-                 <dd>FAX: <span>+1 800 658 5784</span></dd>
-                 <dd>E-mail:&nbsp; <a href="mailto@example.com">info(at)buyshop.com</a></dd>
-              </dl>
-           </address>
-           <ul class="footer_social">
-			  <li><a href=""> <i class="fb"> </i> </a></li>
-			  <li><a href=""><i class="tw"> </i> </a></li>
-			  <li><a href=""><i class="google"> </i> </a></li>
-			  <li><a href=""><i class="instagram"> </i> </a></li>
-		   </ul>
-		</div>
-		<div class="col-md-4 box_3">
-			<h3>Blog Posts</h3>
-			<h4><a href="#">Sed ut perspiciatis unde omnis</a></h4>
-			<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced</p>
-			<h4><a href="#">Sed ut perspiciatis unde omnis</a></h4>
-			<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced</p>
-			<h4><a href="#">Sed ut perspiciatis unde omnis</a></h4>
-			<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced</p>
-		</div>
-		<div class="col-md-4 box_3">
-			<h3>Support</h3>
-			<ul class="list_1">
-				<li><a href="#">Terms & Conditions</a></li>
-				<li><a href="#">FAQ</a></li>
-				<li><a href="#">Payment</a></li>
-				<li><a href="#">Refunds</a></li>
-				<li><a href="#">Track Order</a></li>
-				<li><a href="#">Services</a></li>
-			</ul>
-			<ul class="list_1">
-				<li><a href="#">Services</a></li>
-				<li><a href="#">Press</a></li>
-				<li><a href="#">Blog</a></li>
-				<li><a href="#">About Us</a></li>
-				<li><a href="#">Contact Us</a></li>
-			</ul>
+<div class="clearfix"> </div>
+					<!---->
+				</div>
+				
+			</div>
 			<div class="clearfix"> </div>
 		</div>
-		<div class="clearfix"> </div>
 		</div>
-		<div class="footer_bottom">
-			<div class="copy">
-                <p>Copyright © 2015 Buy_shop. All Rights Reserved.<a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
-	        </div>
-	    </div>
-	</div>
 </div>
+			
+
+
+	{% block content %} {% endblock %}
+
+
+
+
+
+<div class="footer">
+		<div class="container">
+			<div class="col-md-4 footer-top">
+				<h3>Quick Contact</h3>
+				<form>
+						<input type="text" value="ENTER YOUR NAME*" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='ENTER YOUR NAME*';}">
+						
+						<input type="text" value="ENTER YOUR EMAIL*" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='ENTER YOUR EMAIL*';}">
+						
+						<input type="text" value="ENTER YOUR PHONE" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='ENTER YOUR PHONE';}">
+					
+						<textarea cols="77" rows="6" value="" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'ENTER YOUR MESSAGE*';}">ENTER YOUR MESSAGE*</textarea>
+						
+							<input type="submit" value="SEND MESSAGE" >
+						
+					</form>
+			</div>
+			<div class="col-md-4 footer-bottom">
+				<h3>Get In Touch</h3>
+				<div class="logo-footer">
+					<ul class="social">
+		                    <li><a href="#"><i class="fb"> </i> </a></li>
+		                    <li><a href="#"><i class="rss"></i></a></li>
+		                    <li><a href="#"><i class="twitter"></i></a></li>
+		                    <li><a href="#"><i class="dribble"></i></a></li>
+		                    <div class="clearfix"></div>
+		                </ul>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="indo">
+					<ul class="social-footer ">
+						<li><span><i class="glyphicon glyphicon-earphone"> </i>+62 226759804 </span></li>
+						<li><a href="mailto:info@example.com"><i class="glyphicon glyphicon-envelope" class="mes"> </i>info@example.com</a></li>
+						<li><a href="#"><i class="glyphicon glyphicon-link" class="mes-in"> </i>http://example.com</a></li>
+					</ul>
+					<a href="#"><img src="images/pa.png" alt=""></a>
+					</div>
+			</div>
+			<div class="clearfix"> </div>
+			<p class="footer-class">Все права зарезервированы.</a></p>
+		</div>
+	</div>
 </body>
 </html>		
 {% block scripts %}{% endblock %}
