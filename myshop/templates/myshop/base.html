@@ -16,18 +16,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='//fonts.googleapis.com/css?family=Montez' rel='stylesheet' type='text/css'>
 <!--//fonts-->	
 
-
+	
 	{% block css%}{% endblock %}
 	<script type="text/javascript" src="{% static 'scripts/easing.js' %}"></script>
+	<script type="text/javascript" src="{% static 'jquery.validate.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'scripts/easyResponsiveTabs.js' %}"></script>
 	<script type="text/javascript" src="{% static 'scripts/jquery.easydropdown.js' %}"></script>
 	<script type="text/javascript" src="{% static 'scripts/jquery.flexslider.js' %}"></script>
 	<script type="text/javascript" src="{% static 'scripts/jquery.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'scripts/memenu.js' %}"></script>
 	<script type="text/javascript" src="{% static 'scripts/bootstrap.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/bootstrap.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'scripts/jquery-ui.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'scripts/main.js' %}"></script>
 	<script type="text/javascript" src="{% static 'scripts/modernizr.custom.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/popper.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'scripts/move-top.js' %}"></script>
 	<script type="text/javascript" src="{% static 'scripts/simpleCart.min.js' %}"></script>
 	<script src="{% static 'scripts/jquery.validate.min.js' %}"></script>
@@ -54,12 +57,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</ul>
 													{% if user.is_authenticated %}
 						<ul class=" support-right">
-							<li><i class="glyphicon glyphicon-user" class="men"> </i>Привет, {{ user.username }}!</li>
-							<li class="active"><a href="javascript:document.getElementById('logoutForm').submit()">Выйти</a></li>			
+							<li><i class="glyphicon glyphicon-user" class="men"> </i>Привет, <a href="{% url 'shop:account' %}">{{ user.username }}!</a></li>
+							<li class="active"><form id="logoutForm" action="/logout/" method="post">
+    {% csrf_token %}<a href="javascript:document.getElementById('logoutForm').submit()">Выйти</a></form></li>			
 						</ul>
 							{% else %}
 						<ul class=" support-right">
-							<li><a href="account.html"><i class="glyphicon glyphicon-user" class="men"> </i>Привет гость!</a></li>
+							<li><a href="{% url 'shop:register' %}"><i class="glyphicon glyphicon-user" class="men"> </i>Регистрация</a></li>
 							<li><a href="{% url 'shop:login' %}"><i class="glyphicon glyphicon-lock" class="tele"> </i>Войти</a></li>			
 						</ul>
 						{% endif %}
@@ -73,7 +77,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="header-bottom">
 			<div class="container">			
 				<div class="logo">
-					<h2><a href="{% url 'shop:index'%}">Сун<span>дучок</span></a></h2>
+					<h2><a href="{% url 'shop:index'%}">I<span>mate</span></a></h2>
 				</div>
 				
 				
@@ -128,7 +132,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</ul>
 				<div class="clearfix"> </div>
 			</div>
-					<!---->
+					<!---->{% if user.is_authenticated %}
 									{% with total_items=cart|length %}
     {% if cart|length > 0 %}
 					<div class="cart box_1">
@@ -154,6 +158,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					       {% endif %}
     {% endwith %}    
+				{% else %}
+				 {% endif %}
 <div class="clearfix"> </div>
 					<!---->
 				</div>
@@ -205,8 +211,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<ul class="social-footer ">
 						<li><span><i class="glyphicon glyphicon-earphone"> </i>+7-906-224-80-12 </span></li>
 						<li><a href="valera.44.99@yandex.ru"><i class="glyphicon glyphicon-envelope" class="mes"> </i>valera.44.99@yandex.ru</a></li>
-						<li><a href="#"><i class="glyphicon glyphicon-link" class="mes-in"> </i>nashsunduchok.ru</a></li>
-					</ul>
+									</ul>
 						</div>
 			</div>
 			<div class="clearfix"> </div>

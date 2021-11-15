@@ -21,7 +21,7 @@ def index (request):
                       'categories': categories,                   
                       'products': products,
                       'products_last': products_last,
-                       'category_man': category_man,
+                      'category_man': category_man,
                       'category_woman': category_woman,
                       'category_dr': category_dr,
         }
@@ -99,6 +99,87 @@ def about(request):
         'myshop/about.html',
         {
             'title':'О нас',
+                      'category': category,
+                      'categories': categories,
+                      'category_man': category_man,
+                      'category_woman': category_woman,
+                      'category_dr': category_dr,
+        }
+    )
+
+
+def register(request):
+    category = None
+    categories = Category.objects.all()
+    category_man = Category.objects.order_by("slug")[0:5]
+    category_woman = Category.objects.order_by("id")[0:5]
+    category_dr = Category.objects.order_by("-id")[0:5]
+
+    return render(
+        request,
+        'myshop/register.html',
+        {
+            'title':'Регистрация',
+                      'category': category,
+                      'categories': categories,
+                      'category_man': category_man,
+                      'category_woman': category_woman,
+                      'category_dr': category_dr,
+        }
+    )
+
+def reset(request):
+    category = None
+    categories = Category.objects.all()
+    category_man = Category.objects.order_by("slug")[0:5]
+    category_woman = Category.objects.order_by("id")[0:5]
+    category_dr = Category.objects.order_by("-id")[0:5]
+
+    return render(
+        request,
+        'myshop/reset.html',
+        {
+            'title':'Сброс',
+                      'category': category,
+                      'categories': categories,
+                      'category_man': category_man,
+                      'category_woman': category_woman,
+                      'category_dr': category_dr,
+        }
+    )
+
+def account(request):
+    category = None
+    categories = Category.objects.all()
+    category_man = Category.objects.order_by("slug")[0:5]
+    category_woman = Category.objects.order_by("id")[0:5]
+    category_dr = Category.objects.order_by("-id")[0:5]
+
+    return render(
+        request,
+        'myshop/account.html',
+        {
+            'title':'Аккаунт',
+                      'category': category,
+                      'categories': categories,
+                      'category_man': category_man,
+                      'category_woman': category_woman,
+                      'category_dr': category_dr,
+        }
+    )
+
+def edit(request):
+    category = None
+    categories = Category.objects.all()
+    category_man = Category.objects.order_by("slug")[0:5]
+    category_woman = Category.objects.order_by("id")[0:5]
+    category_dr = Category.objects.order_by("-id")[0:5]
+
+    return render(
+        request,
+        'myshop/editprofile.html',
+        {
+            'title':'Сброс',
                       'category': category,
                       'categories': categories,
                       'category_man': category_man,

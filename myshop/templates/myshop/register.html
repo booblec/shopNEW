@@ -1,0 +1,88 @@
+{% extends "myshop/base.html" %}
+
+{% block content %}
+		<div class="container">
+		<div class="register">
+		<h3>Оформление заказа</h3>
+		  	  <form> 
+				
+					
+					<div class="mation">
+					<div>
+						<span>Имя</span>
+						<input type="text"> 
+					</div>
+					<div>
+						<span>Фамилия</span>
+						<input type="text"> 
+					 </div>
+					<div>
+						<span>Номер телефона</span>
+						<input type="text"> 
+					 </div>
+
+					 <div>
+						 <span>Точка самовывоза</span>
+						  <div class="form-group"> 
+    <select class="form-control" id="exampleFormControlSelect1">
+		<option>Доставка</option>
+      <option>Рижский пр. 16</option>
+      <option>ТРК Рубин</option>
+      <option>ТК Звездный</option>
+      <option>Яна Фабрициуса 8</option>
+      <option>ТРК Империал</option>
+		<option>ул. Труда 16</option>
+		<option>Юбилейная 51</option>
+    </select>
+  </div>
+						 											<div>
+						<span>Адрес</span>
+						<input type="text"> 
+					 </div>
+						 
+						 
+			
+						 </div>				
+						
+					 </div>
+				     <input type="submit" value="Оформить">
+				</form>
+				
+				
+		   </div>
+			</div>
+
+
+		<div class="container">
+<form>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Email address</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Example select</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect2">Example multiple select</label>
+    <select multiple class="form-control" id="exampleFormControlSelect2">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Example textarea</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+</form>
+			 </div>
+{% endblock %}

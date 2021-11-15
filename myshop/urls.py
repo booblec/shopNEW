@@ -9,8 +9,12 @@ app_name = 'myshop'
 
 urlpatterns = [
     path('about/', views.about, name='about'),
+    path('edit/', views.edit, name='edit'),
+    path('reset/', views.reset, name='reset'),
+    path('account/', views.account, name='account'),
+    path('register/', views.register, name='register'),
     path('contact/', views.contact, name='contact'),
-    path('login/', LoginView.as_view (
+    path('login/', LoginView.as_view (            
              template_name='myshop/login.html',
              authentication_form=forms.BootstrapAuthenticationForm,
              extra_context= { 'title': 'Log in' }

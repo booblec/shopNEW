@@ -113,16 +113,21 @@
     <Content Include="myshop\static\scripts\memenu.js" />
     <Content Include="myshop\static\scripts\modernizr.custom.js" />
     <Content Include="myshop\static\scripts\move-top.js" />
+    <Content Include="myshop\static\scripts\popper.min.js" />
     <Content Include="myshop\static\scripts\simpleCart.min.js" />
     <Content Include="myshop\templates\myshop\about.html" />
+    <Content Include="myshop\templates\myshop\account.html" />
     <Content Include="myshop\templates\myshop\base.html" />
     <Content Include="myshop\templates\myshop\checkout.html" />
     <Content Include="myshop\templates\myshop\contact.html" />
+    <Content Include="myshop\templates\myshop\editprofile.html" />
     <Content Include="myshop\templates\myshop\index.html" />
     <Content Include="myshop\templates\myshop\login.html" />
     <Content Include="myshop\templates\myshop\loginpartial.html" />
     <Content Include="myshop\templates\myshop\product\detail.html" />
     <Content Include="myshop\templates\myshop\product\list.html" />
+    <Content Include="myshop\templates\myshop\register.html" />
+    <Content Include="myshop\templates\myshop\reset.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
